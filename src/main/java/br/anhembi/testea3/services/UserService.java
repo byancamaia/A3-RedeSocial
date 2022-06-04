@@ -1,6 +1,7 @@
 package br.anhembi.testea3.services;
 
 import br.anhembi.testea3.domain.User;
+import br.anhembi.testea3.dto.UserDTO;
 import br.anhembi.testea3.repository.UserRepository;
 import br.anhembi.testea3.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,11 @@ public class UserService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
 
+    public User insert(User obj){
+        return repo.insert(obj);
+    }
 
+    public User fromDTO(UserDTO objDto){
+        return new User(objDto.getId(), objDto.getName(), objDto.getEmail(), objDto.getSenha());
+    }
 }
