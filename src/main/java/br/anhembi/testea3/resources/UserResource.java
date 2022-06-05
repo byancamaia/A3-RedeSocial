@@ -1,5 +1,6 @@
 package br.anhembi.testea3.resources;
 
+import br.anhembi.testea3.domain.Post;
 import br.anhembi.testea3.domain.User;
 
 import br.anhembi.testea3.dto.UserDTO;
@@ -60,6 +61,10 @@ public class UserResource {
         return ResponseEntity.noContent().build();
     }
 
-
+    @RequestMapping(value = "/{id}/posts", method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> findPosts(@PathVariable("id")String id ){
+        User obj = service.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
+    }
 
 }
