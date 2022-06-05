@@ -2,6 +2,7 @@ package br.anhembi.testea3.config;
 
 import br.anhembi.testea3.domain.Post;
 import br.anhembi.testea3.domain.User;
+import br.anhembi.testea3.dto.AuthorDTO;
 import br.anhembi.testea3.repository.PostRepository;
 import br.anhembi.testea3.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +34,11 @@ public class Instantiation implements CommandLineRunner {
         User alex = new User(null, "alex", "alex@fjisj.com", "ksapks");
         User bob = new User(null, "bobw", "bob@fjisj.com", "assji");
 
-        Post post1 = new Post(null, sdf.parse("21/05/2022"), "Partiu Viagem!", "Vou viajar para SP. Abraços!",maria);
-        Post post2 = new Post(null, sdf.parse("01/06/2022"), "Bom dia!", "Acordei Feliz Hoje!", maria);
-
         userRepository.saveAll(Arrays.asList(maria, alex, bob));
+
+        Post post1 = new Post(null, sdf.parse("21/05/2022"), "Partiu Viagem!", "Vou viajar para SP. Abraços!",new AuthorDTO(maria));
+        Post post2 = new Post(null, sdf.parse("01/06/2022"), "Bom dia!", "Acordei Feliz Hoje!", new AuthorDTO(maria));
+
         postRepository.saveAll(Arrays.asList(post1, post2));
     }
 }
