@@ -3,9 +3,11 @@ package br.anhembi.testea3.resources;
 import br.anhembi.testea3.domain.Post;
 import br.anhembi.testea3.domain.User;
 
+import br.anhembi.testea3.domain.User2;
 import br.anhembi.testea3.dto.UserDTO;
 import br.anhembi.testea3.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -44,6 +46,13 @@ public class UserResource {
         obj = service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @RequestMapping(value = "/login2", method = RequestMethod.POST)
+    public ResponseEntity<User> insert2(@RequestBody User2 objDto){
+        User user2 = service.findByEmail(objDto.getEmail());
+
+        return ResponseEntity.ok() .body(user2);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

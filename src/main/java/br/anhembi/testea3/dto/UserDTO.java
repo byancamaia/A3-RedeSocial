@@ -1,6 +1,7 @@
 package br.anhembi.testea3.dto;
 
 import br.anhembi.testea3.domain.User;
+import br.anhembi.testea3.domain.User2;
 
 import java.io.Serializable;
 
@@ -17,6 +18,12 @@ public class UserDTO implements Serializable {
 
     public UserDTO(User obj) {
         id = obj.getId();
+        name = obj.getName();
+        email = obj.getEmail();
+        senha = obj.getSenha();
+    }
+
+    public UserDTO(User2 obj) {;
         name = obj.getName();
         email = obj.getEmail();
         senha = obj.getSenha();
