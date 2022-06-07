@@ -9,3 +9,60 @@
 - Spring Boot
 - Maven
 - MongoDB
+
+
+
+## ✔️ Setup
+
+- Instalar JDK 11.0.12
+- Instalar Maven 3.3.9
+- Instalar MongoDB
+
+# Documentação das Rotas
+
+## GET users (http://localhost:8080/users)
+
+
+     {
+        "id": "629f6818f793b37bebce3f5e",
+        "name": "Maria Julia",
+        "email": "maju@gmail.com",
+        "senha": "maria"
+    },
+    {
+        "id": "629f6818f793b37bebce3f5f",
+        "name": "Gabriel Fernando",
+        "email": "isagab@gmail.com",
+        "senha": "gabriel"
+    },
+    {
+        "id": "629f6818f793b37bebce3f60",
+        "name": "Carlos Henrique",
+        "email": "caique@gmail.com",
+        "senha": "carlos"
+    }
+
+## POST INSERT (http://localhost:8080/users)
+
+
+    {
+    "name":"Byanca Maia",
+    "email":"byanca@gmail.com",
+    "senha": "1$2k"
+     }
+
+
+
+## PUT UPDATE (http://localhost:8080/users/id)
+
+    {
+    "name":"Byanca Maia",
+    "email":"byanca@gmail.com",
+    "senha": "1$2k"
+    }
+
+  
+
+## DELETE USER (http://localhost:8080/users/id)
+
+
