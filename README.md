@@ -41,6 +41,67 @@
         "email": "caique@gmail.com",
         "senha": "carlos"
     }
+    
+## GET posts (http://localhost:8080/posts)
+     {
+        "id": "629f6818f793b37bebce3f61",
+        "date": "2022-03-21T00:00:00.000+00:00",
+        "title": "Partiu Viagem!",
+        "body": "Vou viajar para SP. Abraços!",
+        "author": {
+            "id": "629f6818f793b37bebce3f5e",
+            "name": "Maria Julia"
+        },
+        "comments": [
+            {
+                "text": "Boa Viagem!",
+                "date": "2022-03-21T00:00:00.000+00:00",
+                "author": {
+                    "id": "629f6818f793b37bebce3f5f",
+                    "name": "Gabriel Fernando"
+                }
+            },
+            {
+                "text": "Aproveita!",
+                "date": "2022-03-22T00:00:00.000+00:00",
+                "author": {
+                    "id": "629f6818f793b37bebce3f60",
+                    "name": "Carlos Henrique"
+                }
+            }
+        ]
+    },
+    {
+        "id": "629f6818f793b37bebce3f62",
+        "date": "2022-06-01T00:00:00.000+00:00",
+        "title": "Bom dia!",
+        "body": "Acordei Feliz Hoje!",
+        "author": {
+            "id": "629f6818f793b37bebce3f60",
+            "name": "Carlos Henrique"
+        },
+        "comments": [
+            {
+                "text": "Tenha um ótimo dia!",
+                "date": "2022-06-01T00:00:00.000+00:00",
+                "author": {
+                    "id": "629f6818f793b37bebce3f5f",
+                    "name": "Gabriel Fernando"
+                }
+            }
+        ]
+    },
+    {
+        "id": "629f6818f793b37bebce3f63",
+        "date": "2022-06-01T00:00:00.000+00:00",
+        "title": "Boa Tarde!",
+        "body": "Tenho que ir trabalhar!",
+        "author": {
+            "id": "629f6818f793b37bebce3f5f",
+            "name": "Gabriel Fernando"
+        },
+        "comments": []
+    }
 
 ## POST INSERT (http://localhost:8080/users)
 
